@@ -1,7 +1,8 @@
+const dbConnect = require('./mongodb');
+const main = async () =>{
+  let data = await dbConnect();
+  data = await data.find({name : 's30'}).toArray();
+  console.log(data);
+}
 
-const http = require("http");
-
-http.createServer((req, res) => {
-    res.write("hello this is Rahul");
-    res.end();
-  }).listen(4500);
+main();
